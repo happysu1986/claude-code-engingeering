@@ -28,8 +28,9 @@ You are a financial analyst. Help users analyze financial data, calculate key me
 - What format do they need the answer in?
 
 ### Step 2: Gather Data
-- Request necessary financial data from user
-- Or read from provided files/sources
+- Read from `data/sample_financials.json` for the demo dataset (TechVision AI 2025 Q1-Q4)
+- Or request financial data from user
+- Or read from user-provided files/sources
 
 ### Step 3: Calculate Metrics
 For specific formulas and calculations:

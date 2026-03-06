@@ -1,0 +1,63 @@
+{
+  "company": "TechVision AI",
+  "period": "2025 Q1-Q4",
+  "quarterly_data": [
+    {
+      "quarter": "2025-Q1",
+      "revenue": 2800000,
+      "cogs": 840000,
+      "operating_expenses": 1200000,
+      "net_income": 520000,
+      "total_assets": 8500000,
+      "shareholders_equity": 4200000,
+      "customers": 1200,
+      "new_customers": 150,
+      "sales_marketing_spend": 450000
+    },
+    {
+      "quarter": "2025-Q2",
+      "revenue": 3200000,
+      "cogs": 928000,
+      "operating_expenses": 1350000,
+      "net_income": 630000,
+      "total_assets": 9200000,
+      "shareholders_equity": 4800000,
+      "customers": 1380,
+      "new_customers": 180,
+      "sales_marketing_spend": 520000
+    },
+    {
+      "quarter": "2025-Q3",
+      "revenue": 3600000,
+      "cogs": 1080000,
+      "operating_expenses": 1500000,
+      "net_income": 680000,
+      "total_assets": 10100000,
+      "shareholders_equity": 5400000,
+      "customers": 1550,
+      "new_customers": 170,
+      "sales_marketing_spend": 580000
+    },
+    {
+      "quarter": "2025-Q4",
+      "revenue": 4100000,
+      "cogs": 1189000,
+      "operating_expenses": 1650000,
+      "net_income": 850000,
+      "total_assets": 11500000,
+      "shareholders_equity": 6200000,
+      "customers": 1750,
+      "new_customers": 200,
+      "sales_marketing_spend": 620000
+    }
+  ],
+  "annual_summary": {
+    "revenue": 13700000,
+    "previous_revenue": 10200000,
+    "cogs": 4037000,
+    "operating_expenses": 5700000,
+    "net_income": 2680000,
+    "total_assets": 11500000,
+    "shareholders_equity": 6200000
+  }
+}
