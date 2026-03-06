@@ -35,37 +35,41 @@ class UserService {
 
   /**
    * 更新用户积分
-   * BUG: 竞态条件 - 并发调用时会丢失更新
+   * 修复：使用原子操作避免竞态条件
    *
    * @param {string} userId
    * @param {number} points
    * @returns {Promise<object>}
    */
   async addPoints(userId, points) {
-    // 1. 读取当前积分
+    // 1. 检查用户是否存在
     const user = await this.getUser(userId);
 
     if (!user) {
       throw new Error('User not found');
     }
 
-    // BUG: 这里存在竞态条件
-    // 如果两个请求同时执行，它们会读到相同的 currentPoints
-    // 然后各自计算 newPoints，导致其中一个更新被覆盖
-    const currentPoints = user.points || 0;
-    const newPoints = currentPoints + points;
+    // 记录更新前的积分（从缓存中获取）
+    const oldPoints = user.points || 0;
 
-    // 2. 更新积分
+    // 2. 使用原子操作更新积分
+    // 修复：将读-修改-写改为原子操作，避免并发更新丢失
     await this.db.query(
-      'UPDATE users SET points = $2 WHERE id = $1',
-      [userId, newPoints]
+      'UPDATE users SET points = points + $2 WHERE id = $1',
+      [userId, points]
     );
 
-    // 3. 更新缓存
-    user.points = newPoints;
-    this.cache.set(userId, user);
+    // 3. 清除缓存，强制下次读取时从数据库获取最新值
+    // 修复：不再使用内存中计算的值，而是确保从数据库读取最新值
+    this.cache.delete(userId);
 
-    return { userId, oldPoints: currentPoints, newPoints };
+    // 4. 返回更新后的用户信息
+    const updatedUser = await this.getUser(userId);
+    return {
+      userId,
+      oldPoints,
+      newPoints: updatedUser.points
+    };
   }
 
   /**

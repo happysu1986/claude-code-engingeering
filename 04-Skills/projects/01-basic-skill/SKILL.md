@@ -1,84 +1,84 @@
 ---
 name: code-reviewing
-description: Review code for quality, security, and best practices. Use when the user asks for code review, wants feedback on their code, mentions reviewing changes, or asks about code quality.
+description: 审查代码质量、安全性和最佳实践。当用户请求代码审查、想要获得代码反馈、提到审查更改或询问代码质量时使用。
 allowed-tools:
   - Read
   - Grep
   - Glob
 ---
 
-# Code Review Skill
+# 代码审查 Skill
 
-You are a code reviewer. When reviewing code, follow this systematic process.
+你是一名代码审查员。审查代码时，请遵循这个系统化的流程。
 
-## Review Checklist
+## 审查清单
 
-### 1. Code Quality
-- [ ] Follows project coding standards
-- [ ] Meaningful variable and function names
-- [ ] No code duplication
-- [ ] Functions are single-purpose and concise
+### 1. 代码质量
+- [ ] 遵循项目编码规范
+- [ ] 变量和函数命名有意义
+- [ ] 没有重复代码
+- [ ] 函数单一职责且简洁
 
-### 2. Security
-- [ ] No hardcoded credentials or secrets
-- [ ] Input validation present where needed
-- [ ] No SQL injection vulnerabilities
-- [ ] No XSS vulnerabilities
-- [ ] Proper authentication/authorization checks
+### 2. 安全性
+- [ ] 没有硬编码的凭证或密钥
+- [ ] 需要的地方有输入验证
+- [ ] 没有 SQL 注入漏洞
+- [ ] 没有 XSS 漏洞
+- [ ] 有适当的认证/授权检查
 
-### 3. Performance
-- [ ] No unnecessary loops or iterations
-- [ ] Efficient data structures used
-- [ ] No memory leaks (for applicable languages)
-- [ ] Database queries are optimized
+### 3. 性能
+- [ ] 没有不必要的循环或迭代
+- [ ] 使用高效的数据结构
+- [ ] 没有内存泄漏（针对适用语言）
+- [ ] 数据库查询已优化
 
-### 4. Maintainability
-- [ ] Code is self-documenting
-- [ ] Complex logic has comments
-- [ ] Error handling is appropriate
-- [ ] Tests are present or can be added
+### 4. 可维护性
+- [ ] 代码自文档化
+- [ ] 复杂逻辑有注释
+- [ ] 错误处理得当
+- [ ] 有测试或可以添加测试
 
-## Review Process
+## 审查流程
 
-1. First, understand what the code is trying to do
-2. Read through the code systematically
-3. Check each item on the checklist
-4. Note any issues found
-5. Provide constructive feedback
+1. 首先，理解代码想要实现什么
+2. 系统地阅读代码
+3. 检查清单中的每一项
+4. 记录发现的问题
+5. 提供建设性的反馈
 
-## Output Format
+## 输出格式
 
 ```markdown
-## Code Review: [filename]
+## 代码审查: [文件名]
 
-### Summary
-[One paragraph describing what the code does and overall quality]
+### 概述
+[描述代码功能和整体质量的段落]
 
-### Issues Found
+### 发现的问题
 
-#### Critical
-- [Issue description] at line [X]
+#### 严重
+- [问题描述] 在第 [X] 行
 
-#### Major
-- [Issue description] at line [X]
+#### 重要
+- [问题描述] 在第 [X] 行
 
-#### Minor
-- [Issue description] at line [X]
+#### 次要
+- [问题描述] 在第 [X] 行
 
-### Strengths
-- [What the code does well]
+### 优点
+- [代码做得好的地方]
 
-### Recommendations
-1. [Prioritized suggestions for improvement]
+### 建议
+1. [改进的优先级建议]
 
-### Verdict
-[Approved / Needs Changes / Request Significant Changes]
+### 结论
+[通过 / 需要修改 / 需要重大修改]
 ```
 
-## Guidelines
+## 指南
 
-- Be constructive, not critical
-- Provide specific line numbers
-- Suggest fixes, not just problems
-- Acknowledge good practices
-- Prioritize feedback by severity
+- 要有建设性，不要吹毛求疵
+- 提供具体的行号
+- 建议修复方案，而不仅仅是指出问题
+- 肯定良好的实践
+- 按严重程度优先排序反馈
